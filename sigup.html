@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>রেজাল্ট নির্বাচন</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #768781a7;
+    }
+    .card {
+      border-radius: 12px;
+      padding: 25px;
+    }
+    .btn-toggle {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="form-container">
+      <h2>রেজাল্ট নির্বাচন</h2>
+      <form id="resultForm">
+        <!-- রেজাল্ট নির্বাচন -->
+        <div class="mb-3">
+          <label class="form-label">ফলাফল নির্বাচন করুন</label>
+          <select class="form-select" name="previous_result" required id="previousResult">
+            <option value="">ফলাফল নির্বাচন করুন</option>
+            <option value="Pass">Pass</option>
+            <option value="Fail">Fail</option>
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="GPA">GPA</option>
+          </select>
+        </div>
+
+        <!-- GPA ইনপুট ফিল্ড (যদি GPA অপশন নির্বাচন করা হয়) -->
+        <div class="mb-3" id="gpaSection" style="display: none;">
+          <label class="form-label">GPA</label>
+          <input type="number" class="form-control" name="gpa" step="0.01" min="0" max="5" placeholder="GPA (যেমন: 4.50)" />
+        </div>
+
+        <!-- Marks ইনপুট ফিল্ড -->
+        <div class="mb-3" id="marksSection" style="display: none;">
+          <label class="form-label">মার্কস</label>
+          <input type="number" class="form-control" name="marks" step="1" min="0" max="100" placeholder="মার্কস (যেমন: ৮০)" />
+        </div>
+
+        <!-- সাবমিট বাটন -->
+        <button type="submit" class="btn btn-success w-100">✅ জমা দিন</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // রেজাল্ট নির্বাচন করার সময় GPA বা Marks ফিল্ড দেখানো হবে
+    const previousResultSelect = document.getElementById("previousResult");
+    const gpaSection = document.getElementById("gpaSection");
+    const marksSection = document.getElementById("marksSection");
+
+    previousResultSelect.addEventListener("change", function () {
+      if (this.value === "GPA") {
+        gpaSection.style.display = "block";  // GPA one
+        marksSection.style.display = "none"; // Marks of
+      } else if (this.value === "Pass" || this.value === "Fail" || this.value === "A+" || this.value === "A" || this.value === "A-" || this.value === "B" || this.value === "C") {
+        gpaSection.style.display = "none";   // GPA one
+        marksSection.style.display = "block"; // Marks seen
+      } else {
+        gpaSection.style.display = "none";   // GPA of
+        marksSection.style.display = "none"; // Marks of
+      }
+    });
+
+    // ফর্ম সাবমিশন (ফলাফল দেখানোর জন্য)
+    document.getElementById("resultForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("✅ আপনার রেজাল্ট সফলভাবে জমা হয়েছে!");
+      this.reset();  
+      gpaSection.style.display = "none";  // GPA reset
+      marksSection.style.display = "none"; // Marks reset
+    });
+  </script>
+</body>
+</html>
