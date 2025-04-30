@@ -61,3 +61,19 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
   }
 });
 
+// card-prncpal
+function toggleReadMore(button) {
+  const cardBody = button.closest('.card-body');
+  const shortText = cardBody.querySelector("#short-text");
+  const fullText = cardBody.querySelector("#full-text");
+
+  if (fullText.classList.contains("d-none")) {
+    shortText.classList.add("d-none");
+    fullText.classList.remove("d-none");
+    button.textContent = "Read Less";
+  } else {
+    shortText.classList.remove("d-none");
+    fullText.classList.add("d-none");
+    button.textContent = "Read More";
+  }
+}
