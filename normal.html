@@ -3,26 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KSPI-Kirtankhola Survey & Polytechnic Institute</title>
-  <link rel="shortcut icon" href="./img/ok-icon.png" type="image/x-icon" />
+  <title>www.B.S.S.edu</title>
+  <link rel="shortcut icon" href="./img/ficon.png" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Custom Style for rounded button */
-    .rounded-custom {
-      border-radius: 12px; /* You can modify this value */
-    }
-    /* Hide cards initially */
-    .faculty-card {
-      display: block;
-    }
-</style>
+  
 </head>
-<body  >
+
+<body>
 
 <!-- Header Section -->
 <div class="container-fluid bg-success bg-opacity-10 py-2">
@@ -68,84 +60,158 @@
 </nav>
 
 <!-- start -->
-
+ 
 <div class="container my-5">
-  <div class="StudentsId text-center mb-4">
-    <h1>Our Faculty Members</h1>
-  </div>
-  <!-- Search Bar -->
-  <div class="container text-center mb-4">
-    <div class="row justify-content-center">
-      <div class="col-md-6 col-sm-8 col-10">
-        <div class="input-group mb-4">
-          <input type="text" id="searchInput" class="form-control" placeholder="Search by name">
-          <button class="btn btn-primary rounded-custom" type="button">Search</button>
-        </div>
+  <h2 class="text-center mb-4">Admission Form</h2>
+  <form>
+
+    <!-- Applicant Details -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name of Applicant *</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="col-md-6">
+        <label for="course" class="form-label">Course Applied For *</label>
+        <select class="form-select" id="course" required>
+          <option value="">Choose Course</option>
+          <option>Diploma in Civil Engineering</option>
+          <option>Diploma in Electrical Engineering</option>
+          <option>Diploma in Computer Engineering</option>
+          <option>Diploma in Mechanical Engineering</option>
+          <option>Diploma in Electronics Engineering</option>
+        </select>
       </div>
     </div>
-  </div>
 
-  <!-- Faculty Cards Section -->
-  <section id="faculty" >
-    <div class="container">
-      <div class="row justify-content-center">
-        <!-- Faculty Card 1 -->
-        <div class="col-md-4 col-sm-6 mb-4 faculty-card">
-          <div class="card shadow-sm h-100">
-            <img src="./img/MD.Sahin Khan.jpg" class="card-img-top" alt="Faculty Photo">
-            <div class="card-body text-center">
-              <h5 class="card-title">MD.Sahin Khan</h5>
-              <p class="card-text text-muted">Bangla & English Insturctor</p>
-              <a href="mailto:akram@example.com" class="btn btn-sm btn-primary">Email</a>
-              <a href="tel:+88017XXXXXXXX" class="btn btn-sm btn-outline-secondary">Call</a>
-            </div>
-          </div>
-        </div> 
-        
-        <!-- Faculty Card 2 -->
-        <div class="col-md-4 col-sm-6 mb-4 faculty-card">
-          <div class="card shadow-sm h-100">
-            <img src="./img/MD.Feroz Alam.jpg" class="card-img" alt="Faculty Photo">
-            <div class="card-body text-center">
-              <h5 class="card-title">MD.Feroz Alam</h5>
-              <p class="card-text text-muted">SUR insturctor</p>
-              <a href="mailto:sultana@example.com" class="btn btn-sm btn-primary">Email</a>
-              <a href="tel:+88018XXXXXXXX" class="btn btn-sm btn-outline-secondary">Call</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Faculty Card 3 -->
-        <div class="col-md-4 col-sm-6 mb-4 faculty-card">
-          <div class="card shadow-sm h-100">
-            <img src="./img/MD.Hamidr Rahman.jpg" class="card-img-top" alt="Faculty Photo">
-            <div class="card-body text-center">
-              <h5 class="card-title">MD.Hamidr Rahman</h5>
-              <p class="card-text text-muted">Computer Instructor</p>
-              <a href="mailto:sultana@example.com" class="btn btn-sm btn-primary">Email</a>
-              <a href="tel:+88018XXXXXXXX" class="btn btn-sm btn-outline-secondary">Call</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Faculty Card 4 -->
-        <div class="col-md-4 col-sm-6 mb-4 faculty-card">
-          <div class="card shadow-sm h-100">
-            <img src="./img/Dipto_imresizer.jpg" class="card-img-top" alt="Faculty Photo">
-            <div class="card-body text-center">
-              <h5 class="card-title">Dipto Das</h5>
-              <p class="card-text text-muted"> IT Officer & Physical Instructor</p>
-              <a href="mailto:dipto2512@gmail.com" class="btn btn-sm btn-primary">Email</a>
-              <a href="tel:+8801728312408" class="btn btn-sm btn-outline-secondary">Call</a>
-            </div>
-          </div>
-        </div>
-
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="father" class="form-label">Father's Name *</label>
+        <input type="text" class="form-control" id="father" required>
+      </div>
+      <div class="col-md-6">
+        <label for="mother" class="form-label">Mother's Name *</label>
+        <input type="text" class="form-control" id="mother" required>
       </div>
     </div>
-  </section>
+
+    <!-- Contact Info -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email *</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone/Mobile *</label>
+        <input type="tel" class="form-control" id="phone" required>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="gender" class="form-label">Gender *</label>
+        <select class="form-select" id="gender" required>
+          <option value="">Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="dob" class="form-label">Date of Birth *</label>
+        <input type="date" class="form-control" id="dob" required>
+      </div>
+      <div class="col-md-4">
+        <label for="marital" class="form-label">Marital Status *</label>
+        <select class="form-select" id="marital" required>
+          <option value="">Select Marital Status</option>
+          <option>Single</option>
+          <option>Married</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Nationality, Religion -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="nationality" class="form-label">Nationality *</label>
+        <input type="text" class="form-control" id="nationality" required>
+      </div>
+      <div class="col-md-6">
+        <label for="religion" class="form-label">Religion *</label>
+        <input type="text" class="form-control" id="religion" required>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="mb-3">
+      <label for="presentAddress" class="form-label">Present Address *</label>
+      <textarea class="form-control" id="presentAddress" rows="2" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="permanentAddress" class="form-label">Permanent Address *</label>
+      <textarea class="form-control" id="permanentAddress" rows="2" required></textarea>
+    </div>
+
+    <!-- SSC Info -->
+    <h5 class="mt-4">SSC Examination Information</h5>
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="sscRoll" class="form-label">SSC Roll No *</label>
+        <input type="text" class="form-control" id="sscRoll" required>
+      </div>
+      <div class="col-md-3">
+        <label for="sscReg" class="form-label">SSC Reg. No *</label>
+        <input type="text" class="form-control" id="sscReg" required>
+      </div>
+      <div class="col-md-3">
+        <label for="sscYear" class="form-label">Passing Year *</label>
+        <input type="text" class="form-control" id="sscYear" required>
+      </div>
+      <div class="col-md-3">
+        <label for="sscGPA" class="form-label">GPA *</label>
+        <input type="text" class="form-control" id="sscGPA" required>
+      </div>
+    </div>
+
+    <!-- Quota -->
+    <div class="mb-3">
+      <label for="quota" class="form-label">Quota (if any)</label>
+      <select class="form-select" id="quota">
+        <option value="">None</option>
+        <option>Freedom Fighter</option>
+        <option>Disabled</option>
+        <option>Tribal</option>
+        <option>Others</option>
+      </select>
+    </div>
+
+    <!-- Source of info -->
+    <div class="mb-3">
+      <label for="kspiRef" class="form-label">How did you know about this institute? *</label>
+      <input type="text" class="form-control" id="kspiRef" required>
+    </div>
+
+    <!-- Optional Experience -->
+    <div class="mb-3">
+      <label for="experience" class="form-label">Experience (Optional)</label>
+      <textarea class="form-control" id="experience" rows="2"></textarea>
+    </div>
+
+    <!-- Photo Upload -->
+    <div class="mb-3">
+      <label for="photo" class="form-label">Photo Upload *</label>
+      <input type="file" class="form-control" id="photo" accept="image/*" required>
+    </div>
+
+    <!-- Submit -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary px-4">Submit Application</button>
+    </div>
+
+  </form>
 </div>
-
 <!-- Footer -->
 <footer class="bg-dark text-white pt-4">
   <div class="container">

@@ -4,34 +4,38 @@ body {
     color: #333;
     font-family: 'SolaimanLipi', 'Noto Sans Bengali', sans-serif;
   }
-  /* Dropdown */
- 
-  /* Navbar */
-  .navbar-brand img {
-    height: 60px;
-  }
 
-  .nav-link {
-    font-weight: 500;
-    transition: color 0.3s ease;
+/* Navigation Links Styling */
+
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+/* Apply Now Button Style */
+.btn-primary {
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  border-radius: 0.4rem;
+}
+
+/* Nav item spacing */
+.navbar-nav li {
+  padding: 8px;
+}
+
+/* Optional: Larger screen spacing */
+@media (min-width: 992px) {
+  .navbar-nav li {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
-  
-  .nav-link:hover {
-    color: #0d6efd;
-  }
-  
-  .btn-primary {
-    padding: 0.5rem 1.2rem;
-    font-weight: bold;
-  }
-  .navbar-nav{
-   margin-left:100px;
-  }
-  @media (max-width: 768px){
-    .navbar-nav{
-      margin-left:0px;
-     }
-  }
+}
+
   /* Marquee */
   marquee h2 {
     font-size: 1.25rem;
@@ -162,11 +166,5 @@ body {
   .student-card .img-fluid {
     padding-top: 0px; 
     padding-left: 0px; 
-   
-  }
-}
-.mar{
-  background-color: #1fe9f7;
-  color: #000;
-
+   }
 }
