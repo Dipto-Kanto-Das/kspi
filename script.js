@@ -1,33 +1,32 @@
-    // script.js
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Custom JS loaded!");
-   
-  });
+  console.log("Custom JS loaded!");
+});
 
-  function toggleReadMore() {
-    const shortText = document.getElementById("short-text");
-    const fullText = document.getElementById("full-text");
-    const button = event.target;
+// General toggle read more function
+function toggleReadMore(button) {
+  const cardBody = button.closest('.card-body');
+  const shortText = cardBody.querySelector("#short-text");
+  const fullText = cardBody.querySelector("#full-text");
 
-    if (fullText.classList.contains("d-none")) {
+  if (fullText.classList.contains("d-none")) {
       shortText.classList.add("d-none");
       fullText.classList.remove("d-none");
       button.textContent = "Read Less";
-    } else {
+  } else {
       shortText.classList.remove("d-none");
       fullText.classList.add("d-none");
       button.textContent = "Read More";
-    }
- 
   }
-// log
+}
+
+// Login form handler
 document.getElementById('loginForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
 
-  // Here, you can replace the below with actual authentication logic
+  // Example username/password validation (replace with actual logic)
   if (username === 'admin' && password === 'password123') {
       alert('Login successful');
       // Redirect or further actions
@@ -35,7 +34,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
       document.getElementById('error-message').style.display = 'block';
   }
 });
-// sigup
+
+// Signup form handler
 document.getElementById('signupForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
@@ -44,14 +44,14 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
   var password = document.getElementById('password').value;
   var confirmPassword = document.getElementById('confirmPassword').value;
 
-  // Simple validation for matching passwords
+  // Validate passwords match
   if (password !== confirmPassword) {
       document.getElementById('error-message').innerText = 'Passwords do not match!';
       document.getElementById('error-message').style.display = 'block';
       return;
   }
 
-  // Here, you can replace the below with actual signup logic
+  // Replace with actual signup logic
   if (username && email && password) {
       alert('Signup successful');
       // Redirect or further actions
@@ -61,19 +61,19 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
   }
 });
 
-// card-prncpal
-function toggleReadMore(button) {
-  const cardBody = button.closest('.card-body');
-  const shortText = cardBody.querySelector("#short-text");
-  const fullText = cardBody.querySelector("#full-text");
+// Search functionality for student cards
+document.getElementById('searchButton').addEventListener('click', function() {
+  let searchValue = document.getElementById('searchInput').value.toLowerCase();
+  let studentCards = document.querySelectorAll('.student-card');
 
-  if (fullText.classList.contains("d-none")) {
-    shortText.classList.add("d-none");
-    fullText.classList.remove("d-none");
-    button.textContent = "Read Less";
-  } else {
-    shortText.classList.remove("d-none");
-    fullText.classList.add("d-none");
-    button.textContent = "Read More";
-  }
-}
+  studentCards.forEach(function(card) {
+      let name = card.querySelector('.card-title').textContent.toLowerCase();
+      let roll = card.querySelector('h6').textContent.toLowerCase();
+
+      if (name.includes(searchValue) || roll.includes(searchValue)) {
+          card.style.display = 'block';
+      } else {
+          card.style.display = 'none';
+      }
+  });
+});
