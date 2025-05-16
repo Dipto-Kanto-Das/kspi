@@ -57,168 +57,10 @@
   </div>
 </nav>
 
+
+
   <!-- Navigation End -->
-    <!-- Latest Update Marquee -->
-    <section class="bg-warning py-2">
-        <div class="container">
-          <marquee behavior="scroll" direction="left" scrollamount="5" class="fw-bold fs-6 text-dark" onmouseover="this.stop()" onmouseout="this.start()">
-            <img src="./img/kspi.png" alt="Book Icon" style="height: 36px;  margin-right: 10px;">
-            "KSPI তে আপনাকে  স্বাগতম এবং আমাদের সাথে যুক্ত হওয়ার জন্য ধন্যবাদ। ভর্তি সংক্রান্ত যেকোনো তথ্যের জন্য,যোগাযোগ করুনঃ-স্থানঃ ফিশারি রোড, বরিশাল,ফোনঃ 01728312408, ই-মেইলঃ dipto2512@gmail.com"
-          </marquee>
-        </div>
-      </section>
-  <h2>Student List</h2>
-  <!-- Search Bar -->
-  <div class="container text-center my-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6 col-sm-8 col-10">
-        <div class="input-group mb-4">
-          <input type="text" id="searchInput" class="form-control" placeholder="Search By Name Or Rroll" onkeyup="searchStudent()" />
-          <button class="btn btn-primary rounded-custom" type="button">Search</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Student Cards -->
-  <div id="studentList">
-    <!-- Example Student Card -->
-    <div class="col-md-4 col-sm-6 mb-4 faculty-card">
-        <div class="card shadow-sm h-100">
-          <img src="./img/MD.Hamidr Rahman.jpg" class="card-img-top" alt="Faculty Photo">
-          <div class="card-body text-center">
-            <h5 class="card-title">MD.Hamidr Rahman</h5>
-            <p class="card-text text-muted">Computer Instructor</p>
-            <a href="mailto:sultana@example.com" class="btn btn-sm btn-primary">Email</a>
-            <a href="tel:+88018XXXXXXXX" class="btn btn-sm btn-outline-secondary">Call</a>
-          </div>
-        </div>
-      </div>
 
-    <!-- More Student Cards here... -->
-
-  </div>
-
-  <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Student Data Array
-    const students = [
-      {
-        name: "Jihad",
-        roll: "100007",
-        fatherName: "######",
-        motherName: "######",
-        dept: "SUR",
-      },
-      {
-        name: "Simun Khan",
-        roll: "100008",
-        fatherName: "######",
-        motherName: "######",
-        dept: "SUR",
-      },
-      {
-        name: "Shahriar Rahman",
-        roll: "100009",
-        fatherName: "######",
-        motherName: "######",
-        dept: "SUR",
-      },
-      {
-          name: "Taposh",
-          roll: "Roll: 100010",
-          fatherName: "######",
-        motherName: "######",
-        dept: "SUR",
-     },
-     {
-          name: "Apon",
-          roll: "Roll: 1000029",
-          fatherName: "######",
-        motherName: "######",
-        dept: "Civil",
-     },
-     {
-          name: "Saraf",
-          roll: "Roll: 1000039",
-          fatherName: "######",
-        motherName: "######",
-        dept: "Civil",
-     },
-     {
-          name: "Shakib",
-          roll: "Roll: 1000019",
-          fatherName: "######",
-        motherName: "######",
-        dept: "Civil",
-     },
-     {
-          name: "Jinia",
-          roll: "Roll: 1000059",
-          fatherName: "######",
-        motherName: "######",
-        dept: "CST",
-     },
-     {
-          name: "Sorup",
-          roll: "Roll: 1000029",
-          fatherName: "######",
-        motherName: "######",
-        dept: "CST",
-     },
-     {
-          name: "Zahid Islam",
-          roll: "Roll: 1000309",
-          fatherName: "######",
-        motherName: "######",
-        dept: "SUR",
-     },
-
-      // Add more student objects as needed
-    ];
-
-    // Function to search students based on name or roll number
-    function searchStudent() {
-      const query = document.getElementById("searchInput").value.toLowerCase();
-      const filteredStudents = students.filter(student => 
-        student.name.toLowerCase().includes(query) || 
-        student.roll.includes(query)
-      );
-      displayStudents(filteredStudents);
-    }
-
-    // Function to display filtered students
-    function displayStudents(students) {
-      const studentListDiv = document.getElementById("studentList");
-      studentListDiv.innerHTML = ""; // Clear existing student cards
-      students.forEach(student => {
-        const card = `
-          <div class="student-card card mb-3 mx-auto" style="max-width: 540px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="./img/kspi.png" class="img-fluid rounded-start" alt="Institute Image">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">${student.name}</h5>
-                  <p>Kirtankhola Survey and Polytechnic Institute</p>
-                  <h6>Roll: ${student.roll}</h6>
-                  <h6>Father's Name: ${student.fatherName}</h6>
-                  <h6>Mother's Name: ${student.motherName}</h6>
-                  <h6>Dept: ${student.dept}</h6>
-                  <button class="btn btn-primary mt-2">Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-        studentListDiv.innerHTML += card;
-      });
-    }
-
-    // Initially display all students
-    displayStudents(students);
-  </script>
 <footer class="bg-dark text-white pt-4">
   <div class="container">
     <div class="row">
@@ -279,7 +121,15 @@
     </div>
 </footer>
 
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+  <!-- Footer strat -->
+   <script src="script.js"></script>
+  <!-- FontAwesome CDN (for icons) -->
+  <script src="script.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A2z02tPqdj+v2Q1JvZIJbFZp6G7pSpLeWLDn/jUiljW6nQqudqMWvPpU4l9E3" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
